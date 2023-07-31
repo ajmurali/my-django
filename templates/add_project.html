@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+{% load bootstrap4 %}
+{% load static %}
+
+{% block head %}
+<style>
+    body{
+        background: rgb(236, 237, 255);
+
+
+    }
+    
+    .formtextarea{
+        resize: both;
+        
+        height: 75px;
+        width: 300px;    
+    }
+    .formtitle{
+       
+        height: 20px;
+        width:300px;
+    }
+    .formdemo{
+        height: 10px;
+        width: 300px;
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block body %}
+<body >
+    
+
+<div class="container-fluid col-sm-10 offset-sm-1"></div>
+<form method="POST" action="" enctype="multipart/form-data">
+   {% csrf_token %} 
+        <div class="col-sm-5 offset-sm-3 mt-3 ps-4">
+            {% bootstrap_form form %}
+            <div class=" mx-5 px-1">
+                <button type="submit" class="btn btn-outline-success" >  Submit</button>
+                <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
+            </div>
+        </div>
+</form>
+    
+
+
+
+<script>
+    let a = document.getElementById("btnradio3");
+        a.checked = true;
+        // let c =document.getElementById("spinner").style.visibility = "hidden";
+        
+      
+</script>
+</body>
+{% endblock %}
+    
+    
