@@ -1,0 +1,44 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% load thumbnail %}
+
+
+{% block body %}
+
+<div class="container-fluid pt-4 me-5">
+    <div class="clearfix pe-5 me-5">
+        <h1 class="float-start">Projects</h1>
+        <button type="button" class="float-end me-5 btn btn-primary" ><a href="{% url 'resume:add_project' %}" style="color:white; text-decoration: none;" > Add Project </a> </button>
+    </div>
+    {% for proj in projects %}
+        <div class="row mt-4 ms-4">
+            <div class="col-sm-5  me-5 pe-3">
+                <h3>{{proj.Title}}</h3>
+                <div class="col-sm-5 text-break ms-1 " style="height:auto;  width: 100%; ">
+                    <p> {{proj.Text}} </p>
+                </div>
+                <div class="col-sm-6 ms-1">
+                    <a href="{{proj.SourceCode.url}}" target="_blank"> <button type="button" class="btn btn-outline-secondary me-2"> Source Code</button></a>
+                    <a href="{{proj.Demo}}" target="_blank" style="text-decoration: none;"> <button type="button" class="btn btn-outline-primary" > Demo </button></a>
+                </div>
+            </div>
+            <div class="col-sm-5 align-self-center">
+                {% thumbnail proj.Image "400x300" crop='center' as im %}
+                    <img src="{{im.url}}" width="{{im.width}}" height="{{im.height}}"  alt="#">
+                {% endthumbnail %}
+            </div>
+        </div>
+        <div class="col-sm-10">
+         <hr>
+        </div>
+    {% endfor %}     
+
+
+</div>
+
+<script>
+    let a = document.getElementById("btnradio3");
+        a.checked = true;
+</script>
+{% endblock %}

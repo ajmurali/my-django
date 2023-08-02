@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<style>
+    .formtextarea{
+        resize: both;
+        
+        height: 75px;
+        width: 300px;
+        
+    }
+</style>
+{% endblock %}
+
+
+
+{% block body %}
+<form method="POST" action="" enctype="multipart/form-data">
+     {% csrf_token %} 
+     {{form|crispy}}
+
+    <div>
+        <button type="submit" class="btn btn-outline-success">  Submit</button>
+         <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
+    </div>
+
+</form>
+    
+
+
+
+<script>
+    let a = document.getElementById("btnradio3");
+        a.checked = true;
+</script>
+
+{% endblock %}
+    
+    
