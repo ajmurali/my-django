@@ -14,34 +14,55 @@
     <style>
         * {
             box-sizing: border-box;
+          } 
+          @media (max-width: 720px){
+            .mobile{
+                display: block;
+            }
+            .desktop{
+                display: none;
+            }
+          }
+          @media (min-width: 721px){
+            .mobile{
+                display: none;
+            }
+            .desktop{
+                display: block;
+            }
           }   
     </style>
 </head>
 <body>
-    <!-- messages -->    
-    {% if messages %}
-        {% for message in messages %}
-            <div class="bg-{% if message.tags %}{{ message.tags }}  {% else %} success {% endif %}  bg-gradient text-center text-white py-2">
-                Project was Uploaded successfully{{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-    <nav class="navbar bg-body-tertiary justify-content-center ">
-        <h2 class="navbar-text nav-item ">
-            Lif(E) - Portfolio of Ak
-        </h2>
-    </nav>
+    <!-- messages -->
+    <div>    
+        {% if messages %}
+            {% for message in messages %}
+                <div class="bg-{% if message.tags %}{{ message.tags }}  {% else %} success {% endif %}  bg-gradient text-center text-white py-2">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <nav class="navbar bg-body-tertiary justify-content-center ">
+            <h2 class="navbar-text nav-item ">
+                Lif(E) - Portfolio of Ak
+            </h2>
+        </nav>
+            <div class="mobile">
+        {% include "include/navbar.html" %}
+        </div>
 
-      {% include "include/navbar.html" %}
+        <div class="desktop">
+        {% include "include/radionav.html" %}
+        </div>
+        
 
-      {% include "include/radionav.html" %}
-      
-
-      <div class="container-fluid col-10 offset-2 ">
-        {% block body %}  
-        {% endblock %}
-          
-      </div> 
+        <div class="container-fluid col-10 offset-1 ">
+            {% block body %}  
+            {% endblock %}
+            
+        </div> 
+    </div>
 
       
      

@@ -54,7 +54,7 @@ class addProjectView(FormView):
         )
         
         # messages.add_message(self.request, messages.SUCCESS, 'Project was succesfully added')
-        messages.success(self.request, "Project was successfully added", fail_silently=True)
+        messages.success(self.request, "Project Was Successfully Added", fail_silently=True)
         
         return super().form_valid(form)
 

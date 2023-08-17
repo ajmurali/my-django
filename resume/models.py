@@ -6,7 +6,7 @@ class Project(models.Model):
     Text = models.TextField(max_length=1000, blank = False, null = False)
     Image = models.ImageField()
     SourceCode = models.FileField(default=1)
-    Demo = models.CharField(max_length= 100 , blank = False , null= False, default=1)
+    Demo = models.CharField(max_length= 1000 , blank = False , null= False, default=1)
 
     def __str__(self):
         return self.Title    

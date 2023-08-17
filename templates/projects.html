@@ -3,38 +3,94 @@
 
 {% load thumbnail %}
 
+{% block head %}
+<style>
+    @media (max-width:720px){
+        .desktop{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+    }
+    @media (min-width:721px){
+        .desktop{
+            display: block;
+        }
+        .mobile{
+            display: none;
+        }
+    }
+</style>
+
+{% endblock %}
+
 
 {% block body %}
-
-<div class="container-fluid pt-4 me-5">
-    <div class="clearfix pe-5 me-5">
-        <h1 class="float-start">Projects</h1>
-        <button type="button" class="float-end me-5 btn btn-primary" ><a href="{% url 'resume:add_project' %}" style="color:white; text-decoration: none;" > Add Project </a> </button>
+<div class="desktop">
+    <div class="container-fluid pt-4 me-5">
+        <div class="clearfix pe-5 me-5">
+            <h1 class="float-start">Projects</h1>
+            <button type="button" class="float-end me-5 btn btn-primary" ><a href="{% url 'resume:add_project' %}" style="color:white; text-decoration: none;" > Add Project </a> </button>
+        </div>
+        {% for proj in projects %}
+            <div class="row mt-4 ms-4">
+                <div class="col-5  me-5 pe-3">
+                    <h3>{{proj.Title}}</h3>
+                    <div class="col-sm-5 text-break ms-1 " style="height:auto;  width: 100%; ">
+                        <p> {{proj.Text}} </p>
+                    </div>
+                    <div class="col-6 ms-1">
+                        <a href="{{proj.SourceCode.url}}" target="_blank"> <button type="button" class="btn btn-outline-secondary me-2"> Source Code</button></a>
+                        <a href="{{proj.Demo}}" target="_blank" style="text-decoration: none;"> <button type="button" class="btn btn-outline-primary" > Demo </button></a>
+                    </div>
+                </div>
+                <div class="col-5 align-self-center">
+                    {% thumbnail proj.Image "400x300" crop='center' as im %}
+                        <img src="{{im.url}}" width="{{im.width}}" height="{{im.height}}"  alt="#">
+                    {% endthumbnail %}
+                </div>
+            </div>
+            <div class="col-10">
+            <hr>
+            </div>
+        {% endfor %}     
     </div>
-    {% for proj in projects %}
-        <div class="row mt-4 ms-4">
-            <div class="col-sm-5  me-5 pe-3">
-                <h3>{{proj.Title}}</h3>
-                <div class="col-sm-5 text-break ms-1 " style="height:auto;  width: 100%; ">
-                    <p> {{proj.Text}} </p>
-                </div>
-                <div class="col-sm-6 ms-1">
-                    <a href="{{proj.SourceCode.url}}" target="_blank"> <button type="button" class="btn btn-outline-secondary me-2"> Source Code</button></a>
-                    <a href="{{proj.Demo}}" target="_blank" style="text-decoration: none;"> <button type="button" class="btn btn-outline-primary" > Demo </button></a>
-                </div>
-            </div>
-            <div class="col-sm-5 align-self-center">
-                {% thumbnail proj.Image "400x300" crop='center' as im %}
-                    <img src="{{im.url}}" width="{{im.width}}" height="{{im.height}}"  alt="#">
-                {% endthumbnail %}
-            </div>
-        </div>
-        <div class="col-sm-10">
-         <hr>
-        </div>
-    {% endfor %}     
+</div>
 
-
+<!-- mobile -->
+<div class="mobile">
+    <div class="d-flex flex-column">
+        <div class="clearfix mt-3">
+            <h1 class="float-start">Projects</h1>
+            <button type="button" class="float-end  btn btn-primary" ><a href="{% url 'resume:add_project' %}" style="color:white; text-decoration: none;" > Add Project </a> </button>
+        </div>
+        <div>
+            {% for proj in projects %}
+                <div class="d-flex flex-column">
+                    <div class=" mx-5 ">
+                        <h3>{{proj.Title}}</h3>
+                    </div>    
+                    <div class=" text-break mx-5 " style="height:auto;  width: 100%; ">
+                        <p> {{proj.Text}} </p>
+                    </div>
+                    <div class=" mx-5 clearfix">
+                        <a href="{{proj.SourceCode.url}}" target="_blank"> <button type="button" class="btn btn-outline-secondary me-2 m-2"> Source Code</button></a>
+                        <a href="{{proj.Demo}}" target="_blank" style="text-decoration: none;"> <button type="button" class="btn btn-outline-primary m-2" > Demo </button></a>
+                    </div>
+                    
+                    <div class=" align-self-center ">
+                        {% thumbnail proj.Image "500x400" crop='center' as im %}
+                            <img src="{{im.url}}" width="{{im.width}}" class="rounded" height="{{im.height}}"  alt="#">
+                        {% endthumbnail %}
+                    </div>
+                </div>
+                <div class="">
+                <hr>
+                </div>
+            {% endfor %} 
+        </div>    
+    </div>
 </div>
 
 <script>

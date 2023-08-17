@@ -6,18 +6,14 @@
 <style>
     body{
         background: rgb(236, 237, 255);
-
-
     }
     
     .formtextarea{
-        resize: both;
-        
+        resize: both;   
         height: 75px;
         width: 300px;    
     }
-    .formtitle{
-       
+    .formtitle{   
         height: 20px;
         width:300px;
     }
@@ -25,6 +21,23 @@
         height: 10px;
         width: 300px;
         margin-bottom: 10px;
+    }
+    @media(max-width:720px){
+        .desktop{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+
+    }
+    @media(min-width:721px){
+        .desktop{
+            display: block;
+        }
+        .mobile{
+            display: none;
+        }
     }
 </style>
 {% endblock %}
@@ -35,17 +48,33 @@
 <body >
     
 
-<div class="container-fluid col-sm-10 offset-sm-1"></div>
+
 <form method="POST" action="" enctype="multipart/form-data">
-   {% csrf_token %} 
-        <div class="col-sm-5 offset-sm-3 mt-3 ps-4">
+   {% csrf_token %}
+   <div class="desktop">
+        <div class="col-4 offset-4 mt-3 ps-4">
+            <h3 class="text-center me-5 pe-5">Upload here!</h3>
             {% bootstrap_form form %}
-            <div class=" mx-5 px-1">
-                <button type="submit" class="btn btn-outline-success" >  Submit</button>
+            <div class=" mx-5 px-2 ">
+                <button type="submit" class="btn btn-outline-success me-3" >Submit</button>
                 <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
             </div>
         </div>
+    </div>
+    
+    <!-- mobile -->
+    <div class="mobile">
+        <div class="d-flex flex-column align-self-center ms-5 mt-3 ps-5">
+            <h3 class="ms-5 ps-3 ">Upload here!</h3>
+            {% bootstrap_form form %}
+            <div class=" mx-5 px-2 ">
+                <button type="submit" class="btn btn-outline-success me-3" >Submit</button>
+                <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
+            </div>
+        </div>
+    </div>
 </form>
+
     
 
 

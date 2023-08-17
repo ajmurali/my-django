@@ -8,34 +8,37 @@
             margin-right: 3px;
             
         }
-        @media (max-width: 660px){
-            .shadow{
-                min-height: 400px;
-                 min-width: 300px;
-
-            }
-        }
         @media (max-width: 720px){
-        #summary{
-                display: grid;
-                
+            .mobile{
+                display: block;
             }
-        }
+            .desktop{
+                display: none;
+            }
+          }
+          @media (min-width: 721px){
+            .mobile{
+                display: none;
+            }
+            .desktop{
+                display: block;
+            }
+          } 
     </style>
 {% endblock %}
 
  {% block body %}
  
  
-
+<div class="desktop">
     <div class="container-fluid ">
         <h1 class=" col-9 pt-4 mb-2" >About Me</h1>
         <div class="row">
-            <div class="  col-3 mx-5 ">
-                <img src="{% static 'images/my-pic.jpg' %}" class="rounded mb-3 shadow img-fluid" height="400px" width="350px"  alt="#">
+            <div class="  col-3 me-5 mb-3">
+                <img src="{% static 'images/my-pic.jpg' %}" class="rounded mb-3 shadow img-fluid" style ="height: 100%; width: 100%;"  alt="#">
                 
             </div>
-            <div class="  col-md-5 col-8 text-left" id="summary" style="font-size: 20px; height: auto; min-height: auto; min-width: 300px; text-align:start"> 
+            <div class="  col-md-6 col-8 text-left" id="summary" style="font-size: 20px; height: auto; min-height: auto; min-width: 300px; text-align:start"> 
                 <code style="color: #4c6cbe;"> Dynamic Full Stack Web Development Intern with a strong foundation in HTML, CSS, JavaScript, Python, Django, and React.js. Proven ability to develop responsive and user-friendly web applications while collaborating effectively with cross-functional teams. Demonstrated expertise in integrating frontend and backend components, implementing RESTful APIs, and conducting thorough testing and debugging. Committed to delivering high-quality code and adhering to coding standards. Seeking opportunities to apply and enhance skills in a professional web development environment.
                 </code>
                 <br>
@@ -44,7 +47,31 @@
                 </a>
             </div>
         </div>  
-    </div>   
+    </div> 
+</div>
+
+<!-- mobile -->
+    
+<div class="mobile">
+    <div class="d-flex flex-column mb-3">
+        <div>
+            <h1 class="  pt-4 mb-4 text-center" >About Me</h1>
+        </div>
+        <div class=" ">
+            <img src="{% static 'images/my-pic.jpg' %}" class="rounded mb-3 shadow img-fluid" style ="height: 100%; width: 100%;"  alt="#">
+        </div>
+        <div class="  col  text-left" id="summary" style="font-size: 20px; height: auto; min-height: auto; min-width: 300px; text-align:start"> 
+            <code style="color: #4c6cbe;"> Dynamic Full Stack Web Development Intern with a strong foundation in HTML, CSS, JavaScript, Python, Django, and React.js. Proven ability to develop responsive and user-friendly web applications while collaborating effectively with cross-functional teams. Demonstrated expertise in integrating frontend and backend components, implementing RESTful APIs, and conducting thorough testing and debugging. Committed to delivering high-quality code and adhering to coding standards. Seeking opportunities to apply and enhance skills in a professional web development environment.
+            </code>
+            <br>
+            <a href="{% static 'images/Ajithkandhan Resume Jul-8 STD.pdf' %}" target="_blank">  
+                <button type="button" class="btn btn-outline-secondary mt-2" id="res_btn">View Resume</button>
+            </a>
+        </div>
+          
+    </div> 
+
+</div>
  
 
 

@@ -1,27 +1,148 @@
 {% extends 'base.html' %} 
 {% load static %}
 
+{% block head %}
+<style>
+    @media (max-width: 720px){
+            .mobile{
+                display: block;
+            }
+            .desktop{
+                display: none;
+            }
+          }
+          @media (min-width: 721px){
+            .mobile{
+                display: none;
+            }
+            .desktop{
+                display: block;
+            }
+          }
+</style>
+{% endblock %}
 
 {% block body %}
+<div class="desktop">
+    <div class=" container-fluid pt-4 ml-n2 col-10 offset-1   ">
+    <h1 class="ml-n2">Experience </h1>
+    <div class="container-fluid ">
+        <!-- ML ASSOCIATE -->
+        <div class="row py-4 mt-3">
+            <div class="col col-2 text-center align-self-center">
+                <img src="{% static 'images\amazon.png' %}" height="100px" width="100px" class="img-fluid rounded" alt="#">
+            </div>
+            <div class="col col-3 text-center pt-3 align-self-center">
+                <strong>Alexa Data Services, Amazon</strong>
+                <p>Chennai, Tamilnadu
+                    <br>
+                    Apr 2023 - Current
+                </p>
+            </div>
+            <div class="col col-6">
+                <Strong>ML DATA ASSOCIATE I</Strong>
+                <p>Apr 2023 - Current</p>
+                <ul>
+                    <li>3 months experience in Machine Learning and AI Technical support and hands on experiencein Amazon Sagemaker.</li>
+                    <li>Worked as a Content Writer in a AI project.</li>
+                    <li>Worked as a Verifier to check the Quality of the work done by the peers.</li>
+                    <li>Worked on defined set of instructions to collect ground truth data for the product development.</li>
+                    <li>Understanding procedures and guidelines for new tasks/releases.</li>
+                </ul>
 
-<div class=" container-fluid pt-4 ml-n2 col-sm-10 offset-sm-0   ">
-<h1 class="ml-n2">Experience </h1>
-<div class="container-fluid ">
-    <!-- ML ASSOCIATE -->
-    <div class="row py-4 mt-3">
-        <div class="col col-2 text-center align-self-center">
+            </div>
+
+        </div>
+        <hr class="col-sm-11">
+
+        <!-- Intern -->
+        <div class="row py-4 mt-3 ">
+            <div class="col col-2 text-center align-self-center">
+                <img src="{% static 'images\bws-logo.jpeg' %}" alt="#" height="100px" width="100px" class="img-fluid rounded ">
+            </div>
+            <div class="col col-3 text-center pt-3 align-self-center">
+                <strong>Business Web Solutions</strong>
+                <p>Chennai, Tamilnadu
+                    <br>
+                    Oct 2022 - Feb 2023
+                </p>
+            </div>
+            <div class="col col-6">
+                <strong>FULL STACK WEB DEVELOPMENT INTERN</strong>
+                <p>Oct 2022 - Feb 2023</p>
+                <ul>
+                    <li>Developed responsive and user-friendly web applications using HTML, CSS, and JavaScript.</li>
+                    <li>Implemented frontend frameworks like React.js and Bootstrap to enhance user experience.</li>
+                    <li>Utilized jQuery for DOM manipulation and AJAX requests.</li>
+                    <li>Utilized Python and Django for backend development, handling data processing and business logic.</li>
+                    <li>Created RESTful APIs for seamless communication between frontend and backend components.</li>
+                    <li>Managed databases and wrote SQL queries for efficient data storage and retrieval.</li>
+                    <li>Conducted thorough testing and debugging to ensure application stability and performance.</li>
+                    <li>Worked with Git for efficient code management and collaboration with the development team.</li>
+                </ul>
+            </div>
+
+        </div>
+        <hr class="col-sm-11">
+
+        <!-- Digital Associate -->
+        <div class="row py-4 mt-3 ">
+            <div class="col col-2 text-center align-self-center">
+                <img src="{% static 'images\amazon.png' %}" alt="#" height="100px" width="100px" class="img-fluid rounded">
+            </div>
+            <div class="col col-3 align-self-center pt-3 text-center">
+                <strong>Amazon Web Services, Amazon</strong>
+                <p>Chennai, Tamilnadu
+                    <br>
+                    Jun 2021 - Apr-2023
+                </p>
+            </div>
+            <div class="col col-6">
+                <strong>DIGITAL ASSOCIATE</strong>
+                <p>Jun 2021 - Apr 2023</p>
+                <ul>
+                    <li>1.9 years of experience in Machine Learning Technical support and hands on experience inAmazon Sagemaker, Amazon Mechanical Turk, S3 bucket.</li>
+                    <li>Worked as a testing support for Machine learning development project.</li>
+                    <li>Worked as a QA to check the Quality of the work done by the peers.</li>
+                    <li>Used <strong>PYTHON</strong> Scripts to audit the correctness of the work.</li>
+                    <li>Performed execution and report results accurately.</li>
+                    <li>Maintaining the quip and allocating tasks to the DA's on daily basis.</li>
+                    <li>Understood procedures and guidelines for new tasks/releases.</li>
+                    <li>Capturing results, communicating and escalating failures and providing individual statusreports and adhering to Productivity and Quality base lines.</li>
+                    <li>Own the daily targets against internal and external dependencies.</li>
+                </ul>
+            </div>
+            </div>
+            <hr class="col-sm-11">
+            </div>
+    </div>
+</div>
+
+
+
+<!-- mobile -->
+
+<div class="mobile">
+    <div class=" d-flex flex-column mb-2">
+        <div>
+            <h1 class="text-center mt-4">Experience </h1>
+        </div>  
+            <!-- ML ASSOCIATE -->
+        <div class=" my-3 text-center align-self-center">
             <img src="{% static 'images\amazon.png' %}" height="100px" width="100px" class="img-fluid rounded" alt="#">
         </div>
-        <div class="col col-3 text-center pt-3 align-self-center">
+        <div class=" text-center  align-self-center">
             <strong>Alexa Data Services, Amazon</strong>
             <p>Chennai, Tamilnadu
                 <br>
                 Apr 2023 - Current
             </p>
         </div>
-        <div class="col col-6">
-            <Strong>ML DATA ASSOCIATE I</Strong>
-            <p>Apr 2023 - Current</p>
+        <div class="">
+            <div class="text-center">
+                <Strong>ML DATA ASSOCIATE I</Strong>
+                <p>Apr 2023 - Current</p>
+            </div>
             <ul>
                 <li>3 months experience in Machine Learning and AI Technical support and hands on experiencein Amazon Sagemaker.</li>
                 <li>Worked as a Content Writer in a AI project.</li>
@@ -29,27 +150,28 @@
                 <li>Worked on defined set of instructions to collect ground truth data for the product development.</li>
                 <li>Understanding procedures and guidelines for new tasks/releases.</li>
             </ul>
-
+    
         </div>
-
-    </div>
-    <hr class="col-sm-11">
-
-    <!-- Intern -->
-    <div class="row py-4 mt-3 ">
-        <div class="col col-2 text-center align-self-center">
+        <div>
+            <hr class="">
+        </div>
+    
+        <!-- Intern -->
+        <div class=" my-1 text-center align-self-center">
             <img src="{% static 'images\bws-logo.jpeg' %}" alt="#" height="100px" width="100px" class="img-fluid rounded ">
         </div>
-        <div class="col col-3 text-center pt-3 align-self-center">
+        <div class=" text-center  align-self-center">
             <strong>Business Web Solutions</strong>
             <p>Chennai, Tamilnadu
                 <br>
                 Oct 2022 - Feb 2023
             </p>
         </div>
-        <div class="col col-6">
-            <strong>FULL STACK WEB DEVELOPMENT INTERN</strong>
-            <p>Oct 2022 - Feb 2023</p>
+        <div class="">
+            <div class="text-center">
+                <strong>FULL STACK WEB DEVELOPMENT INTERN</strong>
+                <p>Oct 2022 - Feb 2023</p>
+            </div>
             <ul>
                 <li>Developed responsive and user-friendly web applications using HTML, CSS, and JavaScript.</li>
                 <li>Implemented frontend frameworks like React.js and Bootstrap to enhance user experience.</li>
@@ -61,25 +183,26 @@
                 <li>Worked with Git for efficient code management and collaboration with the development team.</li>
             </ul>
         </div>
-
-    </div>
-    <hr class="col-sm-11">
-
-    <!-- Digital Associate -->
-    <div class="row py-4 mt-3 ">
-        <div class="col col-2 text-center align-self-center">
+        <div>
+            <hr class="">
+        </div>
+    
+        <!-- Digital Associate -->
+        <div class=" my-3 text-center align-self-center">
             <img src="{% static 'images\amazon.png' %}" alt="#" height="100px" width="100px" class="img-fluid rounded">
         </div>
-        <div class="col col-3 align-self-center pt-3 text-center">
+        <div class=" align-self-center  text-center">
             <strong>Amazon Web Services, Amazon</strong>
             <p>Chennai, Tamilnadu
                 <br>
                 Jun 2021 - Apr-2023
             </p>
         </div>
-        <div class="col col-6">
-            <strong>DIGITAL ASSOCIATE</strong>
-            <p>Jun 2021 - Apr 2023</p>
+        <div class=" ">
+            <div class="text-center">
+                <strong >DIGITAL ASSOCIATE</strong>
+                <p >Jun 2021 - Apr 2023</p>
+            </div>
             <ul>
                 <li>1.9 years of experience in Machine Learning Technical support and hands on experience inAmazon Sagemaker, Amazon Mechanical Turk, S3 bucket.</li>
                 <li>Worked as a testing support for Machine learning development project.</li>
@@ -92,12 +215,14 @@
                 <li>Own the daily targets against internal and external dependencies.</li>
             </ul>
         </div>
+        <div>
+            <hr class="">
+        </div>
+            
+        
     </div>
-    <hr class="col-sm-11">
-    
+</div>
 
-</div>
-</div>
 
 
 

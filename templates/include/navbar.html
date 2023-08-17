@@ -3,25 +3,21 @@
 
 
 
-<!-- <nav class="navbar navbar-expand-lg bg-primary-subtle col-sm-10 offset-sm-1 rounded">
+<nav class="navbar navbar-expand-lg bg-primary-subtle col rounded">
     <div class="container-fluid">
-      <button class="border border-secondary rounded-circle">
-      <a class="navbar-brand d-flex flex-column me-0 " style="font-size:small;" href="/">
-        <img class="align-self-center" src= '{% static "images/aboutme.png" %}' alt="#" height="50px" width="80px">About Me </a>
-      </button>
+      <a class="navbar-brand" href="/">About Me</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-        <div class="navbar-nav" height="100px" width="100px">
-          <button class="border border-secondary rounded-circle">
-            <a class="navbar-brand d-flex flex-column me-0 " href="/" style="font-size:small;">
-              <img class="" src= '{% static "images/experience1.png" %}' alt="#" height="50px" width="80px">Experience </a>
-            </button>
-          <a class="nav-link" href="#">Add New Post</a>     
-         
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " href="{% url 'resume:experience' %}">Experience</a>
+          <a class="nav-link" href="{% url 'resume:projects' %}">Projects</a>
+          <a class="nav-link" href="{% url 'resume:education' %}">Education</a>
+          <a class="nav-link " href="{% url 'resume:skills' %}">Skills</a>
         </div>
       </div>
     </div>
-  </nav> -->
+  </nav>
+  
 
