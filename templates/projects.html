@@ -28,13 +28,13 @@
 
 {% block body %}
 <div class="desktop">
-    <div class="container-fluid pt-4 me-5">
+    <div class="container-fluid offset-1 pt-4 me-5">
         <div class="clearfix pe-5 me-5">
             <h1 class="float-start">Projects</h1>
-            <button type="button" class="float-end me-5 btn btn-primary" ><a href="{% url 'resume:add_project' %}" style="color:white; text-decoration: none;" > Add Project </a> </button>
+            <button type="button" class="float-end  btn btn-primary" ><a href="{% url 'resume:add_project' %}" style="color:white; text-decoration: none;" > Add Project </a> </button>
         </div>
         {% for proj in projects %}
-            <div class="row mt-4 ms-4">
+            <div class="row mt-4 offset-1">
                 <div class="col-5  me-5 pe-3">
                     <h3>{{proj.Title}}</h3>
                     <div class="col-sm-5 text-break ms-1 " style="height:auto;  width: 100%; ">
@@ -51,7 +51,7 @@
                     {% endthumbnail %}
                 </div>
             </div>
-            <div class="col-10">
+            <div class="col-10 offset-1">
             <hr>
             </div>
         {% endfor %}     
