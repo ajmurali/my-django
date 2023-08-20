@@ -29,7 +29,21 @@
             .desktop{
                 display: block;
             }
-          }   
+          }
+        /* a:link{
+            color:rgb(0, 0, 0);
+            }
+        a:visited{
+            opacity: 0.7;
+        }
+        a:hover{
+            color:rgba(172, 4, 4, 0.993)
+        }
+        a:active{
+            opacity: 0.5;
+        } */
+          
+
     </style>
     {% endblock %}
     
@@ -66,24 +80,102 @@
     </div>
 
     <hr>   
-    <footer class="col-10 offset-1 mt-5" style="height: 350px; width:auto;" >
-        
-        <div class="d-flex flex-row ">
-            <div>
+    <footer class="col-10  mt-5" style="height: 250px; width:auto;" >
+    <div class="desktop">
+        <div class="d-flex flex-row col-8 offset-2 ">
+            <div class="me-5 ms-3 pe-5 ">
                 <a href="/"><img src="{% static 'images\my-pic.jpg' %}" class="rounded-circle m-2 " height="32px" width="32px" alt="#"></a>
                 <p>
-                    &copy;  2023 Ak <br>
-                    Designed and Built by Ak! <br>
-                    <a href="{% static 'videos\LifePolio.mp4' %}" target="_blank" style="text-decoration: none;" >
-                        <span style="color:black">Inspired from</span>    &rarrc; </a> <br>
-                        v1.0 <br>
-                    
-
+                    Copyright &copy;  2023 Ak <br>
+                    <code>v1.0</code>  <br>
                 </p>
             </div>
 
+            <div class="mx-5  px-5 align-self-center">
+                <p>
+                    Designed and Built by Ak! <br>
+                    <a href="{% static 'videos\LifePolio.mp4' %}" class=" link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover link-primary" target="_blank"   >
+                        <span style="color: black;"> <code>Inspired from</code></span>    &rarrc; </a> <br>
+                </p>
+                <div class="d-flex flex-row">
+                    <a href="https://www.linkedin.com/in/ajithkandhanm02071999/" target="_blank"><img src="{% static 'images\linkedin.png' %}" class="rounded m-2 " height="20px" width="20px" alt="#"></a>
 
+                    <a href="https://github.com/ajmurali" target="_blank"><img src="{% static 'images\github.png' %}" class="border rounded border-black border-1 m-2 " height="20px" width="20px" alt="#" ></a>
+
+                    <a href="https://www.instagram.com/ak_kandhan/" target="_blank"><img src="{% static 'images\instagram.png' %}" class="rounded m-2 " height="20px" width="20px" alt="#"></a>
+
+                    <a href="https://www.freecodecamp.org/fcca370ac80-930a-4758-8fa6-ad1316ae46ed" target="_blank"><img src="{% static 'images\freecodecamp1.jpg' %}" class="border rounded border-2 border-black m-2 " height="20px" width="20px" alt="#"></a>
+                </div> 
+
+            </div>
+
+            <div class="ms-5 ps-5 me-2 align-self-center">
+                <div class="d-flex flex-column">
+                    <a class="m-2 mb-3 link-underline-opacity-0 link-underline-opacity-75-hover link-body-emphasis" href="{% url 'resume:projects' %}">
+                        View Projects
+                    </a>
+                    <a href="mailto:muralikanddhan002@gmail.com" target="_blank" >
+                        <button type="button" class="btn btn-light">Wanna Say Something <span class="ms-2"><img src="{% static 'images\mailsvg-cropped.svg' %}" alt="#" height="20px" width="20px"> </span></button>
+                    </a>
+                    <a href="tel:+918610086161">
+                        <button type="button" class=" my-2 btn btn-outline-light text-primary-emphasis">Contact Me</button>
+                    </a>
+                </div>
+            </div>
         </div>
+        <hr class="col-8 offset-2">
+        <p class="text-center col-8 offset-2">This website is created using HTML, CSS, VanillaJS, jQuery, and Bootstrap for the frontend; Python and Django framework for the backend; sqlite for the database; and it is managed by Django models.</p>
+    </div> 
+<!-- mobile -->
+    <div class="mobile">
+        <div class="d-flex flex-column col  ">
+            <div class="my-3 align-self-center  ">
+                <div class="ms-5">
+                    <a href="/" ><img src="{% static 'images\my-pic.jpg' %}" class="rounded-circle m-2 " height="32px" width="32px" alt="#"></a>
+                </div>
+                <p class="text-center">
+                    Copyright &copy;  2023 Ak <br>
+                    <code>v1.0</code>  <br>
+                </p>
+            </div>
+
+            <div class="  align-self-center">
+                <p class="text-center">
+                    Designed and Built by Ak! <br>
+                    <a href="{% static 'videos\LifePolio.mp4' %}" class="text-center link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover link-primary" target="_blank"   >
+                        <span style="color: black;"> <code>Inspired from</code></span>    &rarrc; </a> <br>
+                </p>
+                <div class="d-flex flex-row justify-content-center">
+                    <a href="https://www.linkedin.com/in/ajithkandhanm02071999/" target="_blank"><img src="{% static 'images\linkedin.png' %}" class="rounded m-2 " height="20px" width="20px" alt="#"></a>
+
+                    <a href="https://github.com/ajmurali" target="_blank"><img src="{% static 'images\github.png' %}" class="border rounded border-black border-1 m-2 " height="20px" width="20px" alt="#" ></a>
+
+                    <a href="https://www.instagram.com/ak_kandhan/" target="_blank"><img src="{% static 'images\instagram.png' %}" class="rounded m-2 " height="20px" width="20px" alt="#"></a>
+
+                    <a href="https://www.freecodecamp.org/fcca370ac80-930a-4758-8fa6-ad1316ae46ed" target="_blank"><img src="{% static 'images\freecodecamp1.jpg' %}" class="border rounded border-2 border-black m-2 " height="20px" width="20px" alt="#"></a>
+                </div> 
+
+            </div>
+
+            <div class=" my-3 align-self-center">
+                <div class="d-flex flex-column">
+                    <a class=" text-center  mb-3 link-underline-opacity-0 link-underline-opacity-75-hover link-body-emphasis" href="{% url 'resume:projects' %}">
+                        View Projects
+                    </a>
+                    <a href="mailto:muralikanddhan002@gmail.com" target="_blank" >
+                        <button type="button" class="btn btn-light">Wanna Say Something <span class="ms-2"><img src="{% static 'images\mailsvg-cropped.svg' %}" alt="#" height="20px" width="20px"> </span></button>
+                    </a>
+                    <a href="tel:+918610086161" class="text-center">
+                        <button type="button" class=" my-2 btn btn-outline-light text-primary-emphasis">Contact Me</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="col">
+        <p class="text-center ">This website is created using HTML, CSS, VanillaJS, jQuery, and Bootstrap for the frontend; Python and Django framework for the backend; sqlite for the database; and it is managed by Django models.</p>
+    </div> 
+    
+    
     </footer>
      
 
