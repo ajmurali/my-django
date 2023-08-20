@@ -52,7 +52,7 @@
 <form method="POST" action="" enctype="multipart/form-data">
    {% csrf_token %}
    <div class="desktop">
-        <div class="col-4 offset-4 mt-3 ps-4">
+        <div class="col-4 offset-4 mt-3 ps-5">
             <h3 class="text-center me-5 pe-5">Upload here!</h3>
             {% bootstrap_form form %}
             <div class=" mx-5 px-2 ">
@@ -64,12 +64,12 @@
     
     <!-- mobile -->
     <div class="mobile">
-        <div class="d-flex flex-column align-self-center ms-5 mt-3 ps-5">
+        <div class="d-flex flex-column col offset-1 mt-3 ">
             <h3 class="ms-5 ps-3 ">Upload here!</h3>
             {% bootstrap_form form %}
             <div class=" mx-5 px-2 ">
-                <button type="submit" class="btn btn-outline-success me-3" >Submit</button>
-                <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
+                <button type="submit" class="btn btn-outline-success m-2 me-3" >Submit</button>
+                <a href="{% url 'resume:projects' %}"><button type="button" class="m-2 btn btn-outline-danger">Cancel</button> </a> 
             </div>
         </div>
     </div>

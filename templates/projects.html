@@ -27,7 +27,7 @@
 
 
 {% block body %}
-<div class="desktop">
+<div class="desktop" >
     <div class="container-fluid offset-1 pt-4 me-5">
         <div class="clearfix pe-5 me-5">
             <h1 class="float-start">Projects</h1>
@@ -41,8 +41,8 @@
                         <p> {{proj.Text}} </p>
                     </div>
                     <div class="col-6 ms-1">
-                        <a href="{{proj.SourceCode.url}}" target="_blank"> <button type="button" class="btn btn-outline-secondary me-2"> Source Code</button></a>
-                        <a href="{{proj.Demo}}" target="_blank" style="text-decoration: none;"> <button type="button" class="btn btn-outline-primary" > Demo </button></a>
+                        <a href="{{proj.SourceCode.url}}" target="_blank"> <button type="button" class="btn btn-outline-secondary me-2 m-2"> Source Code</button></a>
+                        <a href="{{proj.Demo}}" target="_blank" style="text-decoration: none;"> <button type="button" class="btn btn-outline-primary m-2" > Demo </button></a>
                     </div>
                 </div>
                 <div class="col-5 align-self-center">
