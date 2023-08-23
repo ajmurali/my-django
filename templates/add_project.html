@@ -22,7 +22,7 @@
         width: 300px;
         margin-bottom: 10px;
     }
-    @media(max-width:720px){
+    @media(max-width:768px){
         .desktop{
             display: none;
         }
@@ -31,13 +31,19 @@
         }
 
     }
-    @media(min-width:721px){
+    @media(min-width:769px){
         .desktop{
             display: block;
         }
         .mobile{
             display: none;
         }
+    }
+    footer{
+        display: none;
+    }
+    hr{
+        display: none;
     }
 </style>
 {% endblock %}
@@ -60,11 +66,12 @@
                 <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
             </div>
         </div>
+        
     </div>
     
     <!-- mobile -->
     <div class="mobile">
-        <div class="d-flex flex-column col offset-1 mt-3 ">
+        <div class=" col  mt-3 ">
             <h3 class="ms-5 ps-3 ">Upload here!</h3>
             {% bootstrap_form form %}
             <div class=" mx-5 px-2 ">
@@ -73,7 +80,11 @@
             </div>
         </div>
     </div>
+
 </form>
+
+
+
 
     
 
