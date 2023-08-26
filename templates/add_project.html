@@ -54,10 +54,9 @@
 <body >
     
 
-
-<form method="POST" action="" enctype="multipart/form-data">
-   {% csrf_token %}
-   <div class="desktop">
+<div class="desktop">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="col-4 offset-4 mt-3 ps-5">
             <h3 class="text-center me-5 pe-5">Upload here!</h3>
             {% bootstrap_form form %}
@@ -66,11 +65,14 @@
                 <a href="{% url 'resume:projects' %}"><button type="button" class="btn btn-outline-danger">Cancel</button> </a> 
             </div>
         </div>
-        
-    </div>
+    </form>  
+</div>
     
     <!-- mobile -->
-    <div class="mobile">
+    
+<div class="mobile">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class=" col  mt-3 ">
             <h3 class="ms-5 ps-3 ">Upload here!</h3>
             {% bootstrap_form form %}
@@ -79,9 +81,10 @@
                 <a href="{% url 'resume:projects' %}"><button type="button" class="m-2 btn btn-outline-danger">Cancel</button> </a> 
             </div>
         </div>
-    </div>
+    </form>
+</div>
 
-</form>
+
 
 
 
